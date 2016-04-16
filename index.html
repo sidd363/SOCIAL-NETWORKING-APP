@@ -1,0 +1,46 @@
+<html ng-app='time-waste'>
+<head>
+	<title>SOCIAL NETWORKING APP</title>
+
+<link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+<script type="text/javascript" src ="/node_modules/angular/angular.js"></script>
+<script  type="text/javascript" src="/app/app.js">  </script>
+<script type="text/javascript" src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <!--controllers-->
+<script src="/app/navigation/navigation-controller.js">  </script>
+<script src="/app/signup/signup-controller.js">  </script>
+<script src="/app/profile/edit-profile-controller.js">  </script>
+<script src="/app/main/main-controller.js">  </script>
+<!--follow-->
+<script src="/app/follow/follow-controller.js">  </script>
+
+<!-- libraries-->
+<script src="./node_modules/ng-file-upload/dist/ng-file-upload.js">  </script>
+<script src="./node_modules/ng-file-upload/dist/ng-file-upload-all.js">  </script>
+<script src="./node_modules/ng-file-upload/dist/ng-file-upload-shim.js">  </script>
+
+
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" ng-controller="navigationcontroller">
+<div class="container" >
+	 <div ng-show="!loggedin">
+    <INPUT type="text" ng-model="login.email" >
+
+    <INPUT type="password" ng-model="login.password" >
+
+      
+  <button ng-click="loginuser()" >LOGIN</BUTTON><a ui-sref = 'signup'>Create an account</a>
+        </div>
+        <div ng-show="loggedin"> <a ui-sref="editprofile">EDIT PROFILE</a>
+                                 <a ui-sref="follow">FOLLOW USERS</a>
+            <a ng-click="logout()" >LOG OUT </a> 
+        </div>
+</div>
+</nav>
+
+<div ui-view>
+	</div>
+
+</body>
+</html>

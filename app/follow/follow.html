@@ -1,0 +1,23 @@
+
+ <div class="col-sm-10 col-sm-offset-1" style = "margin-top:100px">
+ 
+ <div class="row">
+    <ul ng-repeat='use in userdata'>
+    	<li ng-show="localuser._id!=use._id">{{use.email}}
+    		<a ng-click="followuser(localuser._id,use._id)"
+    		ng-hide="isfollowing(use._id)">FOLLOW</a>
+    	   <a ng-click="unfollowuser(localuser._id,use._id)"
+    		ng-show="isfollowing(use._id)">UNFOLLOW</a>
+</li>
+
+
+    </ul>
+ 
+
+
+
+    
+    </div>
+    
+</div>
+     
